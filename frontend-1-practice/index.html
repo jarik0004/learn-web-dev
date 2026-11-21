@@ -7,20 +7,220 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
-
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
-
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
-
     <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
+      <!-- ШАПКА -->
+      <header>
+          <div class="logo">
+            <span class="logo-text">LA MODE</span>
+          </div>
+          <div class="navigation">
+            <div class="back-button">
+            <span class="back-button-text">← На главную</span>
+          </div>
+          <div class="location">
+            <span class="location-text">Онлайн-запись</span>
+          </div>
+          </div>
+      </header>
+
+      <!-- ОСНОВА -->
+      <main>
+        <!-- часть с индикатором -->
+        <div class="step-indicator">
+          <div class="step done">
+            <div class="circle"><span>✓</span></div>
+            <span class="step-label">Мастер</span>
+          </div>
+          <div class="step done">
+            <div class="circle"><span>✓</span></div>
+            <span class="step-label">Услуга</span>
+          </div>
+          <div class="step current">
+            <div class="circle"><span>3</span></div>
+            <span class="step-label">Дата и время</span>
+          </div>
+          <div class="step">
+            <div class="circle"><span>4</span></div>
+            <span class="step-label">Контакты</span>
+          </div>
+          <div class="step">
+            <div class="circle"><span>5</span></div>
+            <span class="step-label">Подтверждение</span>
+          </div>
+        </div>
+
+        <!-- часть с заголовками -->
+        <div class="page-titles">
+          <div class="main-title">
+            <span class="main-title-text">Выберите время для себя</span>
+          </div>
+          <div class="add-title">
+            <span class="add-title-text">Марина · Женская стрижка · 60 мин · 2 200 ₽</span>
+          </div>
+        </div>
+
+        <div class="panels">
+        <!-- календарик -->
+          <div class="calendar-box">
+            <div class="calendar-header">
+              <span class="month-year">Ноябрь 2026</span>
+              <div class="calendar-nav">
+                <button>‹</button>
+                <button>›</button>
+              </div>
+            </div>
+            <div class="days-grid-container">
+              <div class="days-labels">
+                <span>Пн</span><span>Вт</span><span>Ср</span> <span>Чт</span
+                ><span>Пт</span><span>Сб</span><span>Вс</span>
+              </div>
+              <div class="grid-days">
+                <!-- неделя 1 -->
+                <div class="week-row">
+                  <div class="day-cell other-month">26</div>
+                  <div class="day-cell other-month">27</div>
+                  <div class="day-cell other-month">28</div>
+                  <div class="day-cell other-month">29</div>
+                  <div class="day-cell other-month">30</div>
+                  <div class="day-cell other-month">31</div>
+                  <div class="day-cell">1</div>
+                </div>
+                <!-- неделя 2 -->
+                <div class="week-row">
+                  <div class="day-cell">2</div>
+                  <div class="day-cell">3</div>
+                  <div class="day-cell">4</div>
+                  <div class="day-cell">5</div>
+                  <div class="day-cell">6</div>
+                  <div class="day-cell">7</div>
+                  <div class="day-cell">8</div>
+                </div>
+                <!-- неделя 3 -->
+                <div class="week-row">
+                  <div class="day-cell">9</div>
+                  <div class="day-cell">10</div>
+                  <div class="day-cell">11</div>
+                  <div class="day-cell selected">12</div>
+                  <div class="day-cell">13</div>
+                  <div class="day-cell">14</div>
+                  <div class="day-cell">15</div>
+                </div>
+                <!-- неделя 4 -->
+                <div class="week-row">
+                  <div class="day-cell">16</div>
+                  <div class="day-cell">17</div>
+                  <div class="day-cell">18</div>
+                  <div class="day-cell">19</div>
+                  <div class="day-cell">20</div>
+                  <div class="day-cell">21</div>
+                  <div class="day-cell">22</div>
+                </div>
+                <!-- неделя 5 -->
+                <div class="week-row">
+                  <div class="day-cell">23</div>
+                  <div class="day-cell">24</div>
+                  <div class="day-cell">25</div>
+                  <div class="day-cell">26</div>
+                  <div class="day-cell">27</div>
+                  <div class="day-cell">28</div>
+                  <div class="day-cell">29</div>
+                </div>
+                <!-- неделя 6 -->
+                <div class="week-row">
+                  <div class="day-cell">30</div>
+                  <div class="day-cell other-month">1</div>
+                  <div class="day-cell other-month">2</div>
+                  <div class="day-cell other-month">3</div>
+                  <div class="day-cell other-month">4</div>
+                  <div class="day-cell other-month">5</div>
+                  <div class="day-cell other-month">6</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- время -->
+          <div class="time-box">
+            <div class="time-titles">
+              <div class="main-title">
+                <span class="main-title-text">Четверг, 12 ноября</span>
+              </div>
+              <div class="add-title">
+                <span class="add-title-text">Начало визита · длительность 60 мин</span>
+              </div>
+            </div>
+            <div class="time-grid">
+              <button class="time-slot">10:00</button>
+              <button class="time-slot unavailable">11:00</button>
+              <button class="time-slot">12:00</button>
+              <button class="time-slot unavailable">13:00</button>
+              <button class="time-slot selected">14:00</button>
+              <button class="time-slot">15:00</button>
+              <button class="time-slot">16:00</button>
+              <button class="time-slot">17:00</button>
+            </div>
+            <div class="description">
+              <span class="description-text">Тёмным отмечено выбранное время.<br>Зачёркнутые интервалы недоступны.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- все остальное -->
+        <div class="bottom-bar">
+          <div class="left-part">
+            <div class="selected-info">
+              <span class="selected-info-text">12 ноября 2026 · 14:00–15:00</span>
+            </div>
+            <button class="prev-btn">← Назад к услугам</button>
+          </div>
+          <button class="next-btn">Далее: контакты  →</button>
+        </div>
+      </main>
+
+      <!-- ПОДВАЛ -->
+      <footer>
+        <div class="footer-cols">
+          <div class="company">
+            <div class="logo">
+              <span class="logo-text">LA MODE</span>
+            </div>
+            <div class="slogan">
+              <span class="slogan-text">Ваш образ. Ваше настроение.<br>С заботой о вас и ваших волосах.</span>
+            </div>
+          </div>
+          <div class="contacts">
+            <div class="heading">
+              <span class="heading-text">КОНТАКТЫ</span>
+            </div>
+            <div class="under-heading">
+              <div class="adress">
+                <span class="adress-text">ул. Садовая, 15, Москва</span>
+              </div>
+              <div class="phone">
+                <span class="phone-text">+7 (495) 123-45-67</span>
+              </div>
+            </div>
+          </div>
+          <div class="work-mode">
+            <div class="heading">
+              <span class="heading-text">РЕЖИМ РАБОТЫ</span>
+            </div>
+            <div class="under-heading">
+              <div class="weekdays">
+                <span class="weekdays-text">Пн–Пт: 9:00 – 21:00</span>
+              </div>
+              <div class="weekend">
+                <span class="weekend-text">Сб–Вс: 10:00 – 19:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="rights">
+            <span class="rights-text">© 2026 LA MODE. Все права защищены.</span>
+          </div>
+          <button class="policy">Политика конфиденциальности</button>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
