@@ -191,7 +191,7 @@ body {
   gap: 45px;
 }
 
-.calendar-nav button {
+.calendar-nav .calendar-nav-prev, .calendar-nav .calendar-nav-next {
   display: flex;
   justify-content: center;
   align-items: center;
