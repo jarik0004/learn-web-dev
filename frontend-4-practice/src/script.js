@@ -43,6 +43,7 @@ export const DAYS_OF_WEEK = [
 
 // ЧИСТЫЕ ФУНКЦИИ
 
+// фукция возвращает диапазон
 export function formatTimeRange(time) {
   if (!time) return "";
 
