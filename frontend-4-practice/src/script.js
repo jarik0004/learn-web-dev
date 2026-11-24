@@ -53,12 +53,6 @@ export function formatTimeRange(time) {
   return `${time}-${formattedNextHour}:${minutes}`;
 }
 
-export function getSlotsForDay(day) {
-  const isEven = day % 2 === 0;
-  const slots = isEven ? SLOTS_EVEN_DAY : SLOTS_ODD_DAY;
-  return slots;
-}
-
 // функция сравнения дат
 function compareDates(date1, date2) {
   const d1 = new Date(date1.year, date1.month, date1.day);
