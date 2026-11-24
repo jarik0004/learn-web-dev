@@ -106,9 +106,13 @@ function Main() {
 
   if (error) {
     return (
+      <main className="main">
+        <StepIndicator/>
+        <PageTitles/>
         <div style={{ textAlign: "center", color: "#E74C3C", fontSize: "24px", fontWeight: "bold", padding: "40px", flex: 1 }}>
           Ошибка: {error}
         </div>
+      </main>
     );
   }
 
