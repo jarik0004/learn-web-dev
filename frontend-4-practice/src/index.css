@@ -1,7 +1,4 @@
-/* Глобальные стили.
-   Минимум: сброс отступов и шрифт по умолчанию.
-   Остальное — стили своей страницы — добавляем сами
-   (в этом файле или в отдельных .css для компонентов). */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
   margin: 0;
@@ -11,5 +8,495 @@
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #FFFDF9;
+  min-width: 1024px;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: #FFE1CE;
+}
+
+.header .logo {
+  padding-left: 48px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header .logo-text {
+  color: #513B30;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 96px;
+  gap: 40px;
+}
+
+.back-button-text, .location-text {
+  font-size: 16px;
+  color: #513B30;
+}
+
+.back-button-text {
+  font-weight: regular;
+}
+
+.location-text {
+  font-weight: bold;
+}
+
+/* main */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 48px 20px;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+/* step indicator */
+
+.step-indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.step .circle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #F5EEE6;
+  font-size: 19px;
+  font-weight: bold;
+  color: #816B5D;
+}
+
+.step.done .circle, .step.current .circle {
+  background: #513B30;
+  color: white;
+}
+
+.step-label {
+  font-size: 16px;
+  font-weight: regular;
+  color: #816B5D;
+}
+
+.step.done .step-label, .step.current .step-label {
+  color: #513B30;
+}
+
+.step.current .step-label {
+  font-weight: bold;
+}
+
+.page-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.page-titles .main-title-text {
+  font-size: 40px;
+  color: #513B30;
+}
+
+.page-titles .add-title-text {
+  font-size: 19px;
+  color: #816B5D;
+}
+
+.panels {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+/* calendar */
+
+.calendar-box {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 16px 20px 20px 20px;
+  width: 516px;
+  min-height: 319px;
+  background: #FFFDF9;
+  border: 1px solid #E5D7CB;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.calendar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+}
+
+.calendar-header .month-year {
+  font-size: 19px;
+  font-weight: bold;
+  color: #513B30;
+}
+
+.calendar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 45px;
+}
+
+.calendar-nav .calendar-nav-prev, .calendar-nav .calendar-nav-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: #513B30;
+  cursor: pointer;
+  border: none;
+  font-size: 23px;
+}
+
+.days-grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.days-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 24px;
+  gap: 27px;
+}
+
+.days-labels span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  font-weight: bold;
+  font-size: 11px;
+  color: #816B5D;
+}
+
+.grid-days {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.grid-days .week-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 31px;
+  gap: 27px;
+}
+
+.day-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 31px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #513B30;
+  cursor: pointer;
+}
+
+.day-cell:not(.other-month):not(.disabled):not(.selected):hover {
+  background: #F5E6DC;
+}
+
+.day-cell.other-month, .day-cell.disabled {
+  color: #C8BDB4;
+}
+
+.day-cell.disabled {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.day-cell.disabled::before, .day-cell.disabled::after {
+  content: "\00a0";
+}
+
+.day-cell.selected {
+  background: #513B30;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* время */
+
+.time-box {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 18px 20px 20px 20px;
+  width: 380px;
+  min-height: 319px;
+  background-color: #FFFDF9;
+  border: 1px solid #E5D7CB;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.time-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.time-titles .main-title-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #513B30;
+}
+
+.time-titles .add-title-text {
+  font-size: 12px;
+  color: #816B5D;
+}
+
+.time-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.time-slot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 104px;
+  background: #FFFDF9;
+  border-radius: 6px;
+  font-size: 14px;  
+  color: #513B30;
+  cursor: pointer;
+  border: 1px solid #E5D7CB;
+}
+
+.time-slot:not(.unavailable):not(.selected):hover {
+  background: #F5E6DC;
+}
+
+.time-slot.unavailable {
+  background: #F5EEE6;
+  color: #B5A497;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  cursor: not-allowed;
+}
+
+.time-slot.unavailable::before, .time-slot.unavailable::after {
+  content: "\00a0\00a0";
+}
+
+.time-slot.selected {
+  background: #513B30;
+  color: #FFFFFF;
+  font-weight: bold;
+  border: none;
+}
+
+.description {
+  color: #816B5D;
+  font-size: 11px;
+  line-height: 140%;
+}
+
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.bottom-bar .left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+.selected-info-text, .prev-btn{
+  font-weight: bold;
+  color: #513B30;
+}
+
+.selected-info-text {
+  font-size: 20px;
+}
+
+.prev-btn {
+  font-size: 17px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.next-btn {
+  background: #513B30;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  width: 262px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.next-btn:hover {
+  background: #8B6653;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background:#513B30;
+  color: #F8E9DC;
+  padding: 56px 48px;
+  height: 270px;
+  gap: 48px;
+}
+
+.footer .logo {
+  padding-left: 10px;
+}
+
+.footer .logo-text {
+  font-size: 32px;
+}
+
+.footer-cols {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4%;
+}
+
+.company, .contacts, .work-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.under-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.slogan-text {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.heading-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.adress-text, .phone-text {
+  font-size: 16px;
+}
+
+.phone {
+  font-weight: bold;
+}
+
+.weekdays-text, .weekend-text {
+  font-size: 16px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 24px;
+  border-top: 1px solid #3D4243;
+  font-size: 16px;
+}
+
+.policy {
+  color: #F8E9DC;
+  font-size: 16px;
+  text-decoration-line: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
 }

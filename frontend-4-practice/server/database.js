@@ -11,6 +11,8 @@
 // Правьте данные под свой проект. Ничего страшного, если
 // названия полей не совпадают с примером — сервер отдаст
 // то, что вы здесь напишете. Но клиент должен знать формат.
+const now = new Date();
+
 export const database = {
     // «Сегодня» по мнению сервера.
     // Календарь использует это, чтобы:
@@ -21,7 +23,7 @@ export const database = {
     // Формат: { day, month, year }. Месяц — 0-индексный (9 = октябрь).
     // Меняйте на свой — например, поставьте реальную дату
     // через new Date() или любую удобную для проверки.
-    today: { day: 17, month: 9, year: 2026 },
+    today: { day: now.getDate(), month: now.getMonth(), year: now.getFullYear() },
   
     // Слоты для чётных дней (2, 4, 6, ...).
     // Каждый слот: { time: "10:00", available: true }.
@@ -32,34 +34,24 @@ export const database = {
     // Клиент этой логики не видит.
     slotsEvenDay: [
       { time: "10:00", available: true },
-      { time: "10:30", available: true },
       { time: "11:00", available: true },
-      { time: "11:30", available: true },
-      { time: "12:00", available: false },
-      { time: "13:00", available: false },
-      { time: "14:30", available: true },
+      { time: "12:00", available: true },
+      { time: "13:00", available: true },
       { time: "15:00", available: true },
-      { time: "16:00", available: true },
-      { time: "17:30", available: true },
-      { time: "18:00", available: true },
-      { time: "19:30", available: true },
+      { time: "16:00", available: false },
+      { time: "17:00", available: false },
     ],
   
     // Слоты для нечётных дней (1, 3, 5, ...).
     // Здесь занятые слоты другие — чтобы при клике по дням
     // пользователь видел, что данные действительно меняются.
     slotsOddDay: [
-      { time: "10:00", available: true },
-      { time: "10:30", available: true },
+      { time: "10:00", available: false },
       { time: "11:00", available: false },
-      { time: "11:30", available: true },
       { time: "12:00", available: true },
       { time: "13:00", available: true },
-      { time: "14:30", available: true },
       { time: "15:00", available: true },
-      { time: "16:00", available: false },
-      { time: "17:30", available: true },
-      { time: "18:00", available: true },
-      { time: "19:30", available: true },
+      { time: "16:00", available: true },
+      { time: "17:00", available: true },
     ],
   };
