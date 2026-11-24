@@ -109,7 +109,7 @@ function Main() {
       <main className="main">
         <StepIndicator/>
         <PageTitles/>
-        <div style={{ textAlign: "center", color: "#E74C3C", fontSize: "24px", fontWeight: "bold", padding: "40px", flex: 1 }}>
+        <div style={{ textAlign: "center", color: "#E74C3C", fontSize: "24px", padding: "40px", flex: 1 }}>
           Ошибка: {error}
         </div>
       </main>
